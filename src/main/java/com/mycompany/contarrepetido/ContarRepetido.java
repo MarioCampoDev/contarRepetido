@@ -4,6 +4,8 @@
 
 package com.mycompany.contarrepetido;
 
+import java.util.Scanner;
+
 /**
  *
  * @author mario
@@ -11,6 +13,24 @@ package com.mycompany.contarrepetido;
 public class ContarRepetido {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        int numerosVector[] = new int [15], numeroRepetido = 3, contadorRepetido=0;
+        Scanner teclado = new Scanner(System.in);
+        
+        for (int i = 0; i < numerosVector.length; i++) {
+            System.out.println("Ingrese el valor de la posicion: "+i);
+            numerosVector[i] = teclado.nextInt();
+        }
+        
+        for (int i = 0; i < numerosVector.length; i++) {
+            if (numerosVector[i] == numeroRepetido) {
+                contadorRepetido++;
+            }
+        }
+        
+        if (contadorRepetido == 1) {
+            System.out.println("El numero "+numeroRepetido+" se cargo "+contadorRepetido+" vez");
+        }else{
+            System.out.println("El numero "+numeroRepetido+" se cargo "+contadorRepetido+" veces");
+        }
     }
 }
